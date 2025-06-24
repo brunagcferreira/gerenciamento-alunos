@@ -2,6 +2,7 @@ package br.com.gerenciamento.service;
 
 import br.com.gerenciamento.exception.CriptoExistsException;
 import br.com.gerenciamento.exception.EmailExistsException;
+import br.com.gerenciamento.model.Aluno;
 import br.com.gerenciamento.model.Usuario;
 import br.com.gerenciamento.repository.UsuarioRepository;
 import br.com.gerenciamento.util.Util;
@@ -30,5 +31,9 @@ public class ServiceUsuario {
 
     public Usuario loginUser(String user, String senha) {
         return usuarioRepository.buscarLogin(user, senha);
+    }
+
+    public Usuario getById(Long id) {
+        return this.usuarioRepository.findById(id).get();
     }
 }
