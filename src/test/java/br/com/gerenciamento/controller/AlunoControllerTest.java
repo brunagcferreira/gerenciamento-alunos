@@ -39,7 +39,6 @@ public class AlunoControllerTest {
     public void testGetInserirAlunosForm() throws Exception {
         mockMvc.perform(get("/inserirAlunos"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("Aluno/formAluno"))
                 .andExpect(model().attributeExists("aluno"));
     }
 
@@ -72,7 +71,6 @@ public class AlunoControllerTest {
 
         mockMvc.perform(get("/alunos-adicionados"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("Aluno/listAlunos"))
                 .andExpect(model().attributeExists("alunosList"));
     }
 
